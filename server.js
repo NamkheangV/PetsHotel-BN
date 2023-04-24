@@ -15,6 +15,9 @@ app.get("/", (req, res) => {
   res.send("Express + Javascript Server!!");
 });
 
+import usersRouter from "./src/users/router.js";
+app.use("/users", usersRouter);
+
 app.listen(port, () => {
   console.log(`[Server]: Server is running at http://localhost:${port}`);
 });
