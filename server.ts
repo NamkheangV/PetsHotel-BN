@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response} from 'express'
 import cors from "cors";
 import * as dotenv from "dotenv";
 
@@ -11,13 +11,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.send("Express + Javascript Server!!");
+app.get("/", (req: Request, res: Response) => {
+  res.send("Express + TypeScript Server!!");
 });
-
-import usersRouter from "./src/users/router.js";
-app.use("/users", usersRouter);
 
 app.listen(port, () => {
   console.log(`[Server]: Server is running at http://localhost:${port}`);
 });
+
+import usersRouter from "./src/users/router";
+app.use("/users", usersRouter);
+

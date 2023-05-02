@@ -15,7 +15,7 @@ model booking {
   bk_pet_amount Int
   bk_pet_name   String   @db.VarChar(255)
   bk_pet_breed  String   @db.VarChar(255)
-  bk_pet_image  String   @db.Text
+  bk_pet_image  Bytes
   checkin_date  DateTime @db.Date
   checkout_date DateTime @db.Date
   total_price   Float
@@ -38,10 +38,10 @@ model rooms {
 model users {
   user_id    String  @id @db.VarChar(255)
   user_pass  String  @db.VarChar(255)
-  user_email String? @db.VarChar(255)
+  user_email String  @db.VarChar(255)
   user_fname String? @db.VarChar(255)
   user_lname String? @db.VarChar(255)
   user_phone String? @db.VarChar(255)
-  user_image String? @db.Text
+  user_image Bytes?
   user_type  Int     @default(1)
 }

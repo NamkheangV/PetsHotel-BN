@@ -2,11 +2,14 @@
   "name": "petshotel-bn",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
-  "type": "module",
+  "engines": {
+    "node": "18.14.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch server.js"
+    "build": "cls && npx tsc",
+    "start": "cls && node dist/server.js",
+    "dev": "cls && concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\""
   },
   "keywords": [],
   "author": "",
@@ -22,6 +25,12 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "prisma": "^4.13.0"
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.16.3",
+    "concurrently": "^8.0.1",
+    "prisma": "^4.13.0",
+    "typescript": "^5.0.4"
   }
 }
