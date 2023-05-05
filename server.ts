@@ -22,3 +22,6 @@ app.listen(port, () => {
 import usersRouter from "./src/users/router";
 app.use("/users", usersRouter);
 
+import authRouter from "./src/auth/router";
+app.use("/auth", authRouter);
+
