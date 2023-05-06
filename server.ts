@@ -25,3 +25,6 @@ app.use("/users", usersRouter);
 import authRouter from "./src/auth/router";
 app.use("/auth", authRouter);
 
+import booking from "./src/booking/router";
+app.use("/booking", booking);
+

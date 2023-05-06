@@ -9,39 +9,34 @@ datasource db {
 
 model booking {
   bk_id         Int      @id @default(autoincrement())
-  bk_cus_fname  String   @db.VarChar(255)
-  bk_cus_lname  String   @db.VarChar(255)
-  bk_cus_phone  String   @db.VarChar(255)
+  bk_cus_fname  String   @db.VarChar(100)
+  bk_cus_lname  String   @db.VarChar(100)
+  bk_cus_phone  String   @db.VarChar(100)
   bk_pet_amount Int
-  bk_pet_name   String   @db.VarChar(255)
-  bk_pet_breed  String   @db.VarChar(255)
-  bk_pet_image  Bytes
+  bk_pet_name   String   @db.VarChar(100)
+  bk_pet_breed  String   @db.VarChar(100)
   checkin_date  DateTime @db.Date
   checkout_date DateTime @db.Date
-  total_price   Float
-  payment_proof String   @db.Text
   bk_status     Int      @default(0)
-  room_id       String   @db.VarChar(55)
-  user_id       String   @db.VarChar(55)
-
-  @@index([room_id], map: "room_id")
-  @@index([user_id], map: "user_id")
-}
-
-model rooms {
-  room_id         String @id @db.VarChar(50)
-  room_type       String @db.VarChar(50)
-  capacity        Int    @default(0)
-  price_per_night Float  @default(0)
+  payment_proof Bytes
+  room_id       String   @db.VarChar(100)
+  user_id       String   @db.VarChar(100)
 }
 
 model users {
-  user_id    String  @id @db.VarChar(255)
-  user_pass  String  @db.VarChar(255)
-  user_email String  @db.VarChar(255)
-  user_fname String? @db.VarChar(255)
-  user_lname String? @db.VarChar(255)
-  user_phone String? @db.VarChar(255)
+  user_id    String  @id @db.VarChar(100)
+  user_pass  String  @db.VarChar(100)
+  user_email String  @db.VarChar(100)
+  user_fname String? @db.VarChar(100)
+  user_lname String? @db.VarChar(100)
+  user_phone String? @db.VarChar(100)
   user_image Bytes?
   user_type  Int     @default(1)
+}
+
+model rooms {
+  room_id     String @id @db.VarChar(100)
+  room_type   String @db.VarChar(100)
+  room_price  Int
+  room_status String @db.VarChar(100)
 }

@@ -4,17 +4,17 @@ import upload from "../middleware/upload";
 
 const router = Express.Router();
 
-// Get /bookings
+// Get /booking
 router.get("/", getBookings);
 router.get("/:bk_id", getBookingById);
 
-// Post /bookings
-router.post("/", upload.single("bk_pet_image"), createBooking);
+// Post /booking
+router.post("/", upload.single("payment_proof"), createBooking);
 
-// Put /bookings:id
-router.put("/:bk_id", upload.single("bk_pet_image"), updateBooking);
+// Put /booking:id
+router.put("/:bk_id", updateBooking);
 
-// Delete /bookings:id
+// Delete /booking:id
 router.delete("/:bk_id", deleteBooking);
 
 export default router;
