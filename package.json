@@ -7,10 +7,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc && npm run copy:assets",
-    "start": "npm run copy:assets && node dist/server.js",
-    "dev": "npm run copy:assets && concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
-    "copy:assets": "copyfiles src/assets/* dist/src/assets"
+    "build": "npx tsc",
+    "start": "node dist/server.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\""
   },
   "keywords": [],
   "author": "",
@@ -18,7 +17,6 @@
   "dependencies": {
     "@prisma/client": "^4.13.0",
     "bcrypt": "^5.1.0",
-    "copyfiles": "^2.4.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
