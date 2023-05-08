@@ -10,7 +10,7 @@
     "build": "npx tsc && npm run copy:assets",
     "start": "npm run copy:assets && node dist/server.js",
     "dev": "npm run copy:assets && concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
-    "copy:assets": "copyfiles src/assets/* dist/src/assets/ -u 2"
+    "copy:assets": "copyfiles src/assets/* dist/src/assets"
   },
   "keywords": [],
   "author": "",
