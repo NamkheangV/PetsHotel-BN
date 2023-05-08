@@ -24,6 +24,28 @@ class BookingService {
     });
   }
 
+  // Get all bookings by user id
+  public static async getAllBookingsByUserId(user_id: string) {
+    return this.prisma.booking.findMany({
+      where: { user_id },
+      select: {
+        payment_proof: false,
+        bk_id: true,
+        bk_cus_fname: true,
+        bk_cus_lname: true,
+        bk_cus_phone: true,
+        bk_pet_amount: true,
+        bk_pet_name: true,
+        bk_pet_breed: true,
+        checkin_date: true,
+        checkout_date: true,
+        bk_status: true,
+        room_id: true,
+        user_id: true,
+      },
+    });
+  }
+
   // Get booking by id
   public static async getBookingById(
     where: Prisma.bookingWhereUniqueInput

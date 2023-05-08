@@ -18,9 +18,9 @@ model booking {
   checkin_date  DateTime @db.Date
   checkout_date DateTime @db.Date
   bk_status     Int      @default(0)
-  payment_proof Bytes
+  payment_proof Bytes?
   room_id       String   @db.VarChar(100)
-  user_id       String   @db.VarChar(100)
+  user_id       String?  @db.VarChar(100)
 }
 
 model users {
@@ -38,5 +38,5 @@ model rooms {
   room_id     String @id @db.VarChar(100)
   room_type   String @db.VarChar(100)
   room_price  Int
-  room_status String @db.VarChar(100)
+  room_status Int    @default(0)
 }

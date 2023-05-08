@@ -9,8 +9,9 @@ interface Booking {
   checkin_date: Date;
   checkout_date: Date;
   bk_status: number;
+  payment_proof?: Buffer| null;
   room_id: string;
-  user_id: string;
+  user_id?: string;
 }
 
 export default Booking;

@@ -28,3 +28,6 @@ app.use("/auth", authRouter);
 import booking from "./src/booking/router";
 app.use("/booking", booking);
 
+import rooms from "./src/rooms/router";
+app.use("/rooms", rooms);
+
